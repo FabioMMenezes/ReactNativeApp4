@@ -15,6 +15,8 @@ import {
 
 import Topo from './src/components/topo';
 import Icone from './src/components/icone';
+import './ReactotronConfig';
+import Reactotron from 'reactotron-react-native'
 
 class appJoKenPo extends Component {
 
@@ -27,7 +29,20 @@ class appJoKenPo extends Component {
   jokenpo(escolhaUsuario) {
 
     const numAlet = Math.floor(Math.random() * 3);
-
+    Reactotron.log(numAlet);
+    Reactotron.warn(numAlet);
+    Reactotron.error(numAlet);
+    Reactotron.display({
+      name: "KNOCK KNOCK",
+      preview: "Who's there?",
+      value: "Orange."
+    });
+    Reactotron.display({
+      name: "ORANGE",
+      preview: "Who?",
+      value: "Orange you glad you don't know me in real life?",
+      important: true
+    });
     let escolhaComputador = '';
 
     switch (numAlet) {
